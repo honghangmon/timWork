@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "skills": {
+    "commit": {
+      "source": "chanmuzi/git-conventions",
+      "sourceType": "github",
+      "computedHash": "d9b228e4db23886cb5e5c4795a658aecab5863dfa425652bd446a97b3c4cec2a"
+    },
+    "pr": {
+      "source": "chanmuzi/git-conventions",
+      "sourceType": "github",
+      "computedHash": "8898636409004dafbfbccd68206207410779d8fff870820b85665d686da74502"
+    },
+    "review": {
+      "source": "chanmuzi/git-conventions",
+      "sourceType": "github",
+      "computedHash": "5dc6017da90aa9a67e880eda86b2252a4ae8fe348c0ebe2a5d27b8c5f83624ac"
+    }
+  }
+}
