@@ -1,0 +1,113 @@
+.app-shell {
+  position: relative;
+  min-height: 100vh;
+  background-color: var(--color-black);
+  background-image: url("/asset/backGround.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+.app-shell--explorer {
+  background-color: #eef1f5;
+  background-image: none;
+}
+
+.app-shell::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--overlay-black);
+  pointer-events: none;
+}
+
+.app-shell--explorer::before {
+  display: none;
+}
+
+.screen {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: grid;
+  transition:
+    transform 760ms cubic-bezier(0.22, 0.61, 0.36, 1),
+    opacity 560ms ease;
+}
+
+.screen--splash {
+  place-items: center;
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.screen--splash.screen--splash-exit {
+  transform: translateX(-100%);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.splash-logo {
+  width: min(520px, 76vw);
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 12px 28px rgba(0, 0, 0, 0.5));
+}
+
+.screen--hub {
+  place-items: center;
+  padding: 36px 24px;
+  transform: translateX(100%);
+  opacity: 0;
+}
+
+.screen--hub.screen--hub-ready {
+  pointer-events: none;
+}
+
+.screen--hub.screen--hub-enter {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.screen--hub.screen--hub-exit {
+  transform: translateX(-100%);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.screen--explorer {
+  padding: 0;
+  transform: translateX(100%);
+  opacity: 0;
+}
+
+.screen--explorer.screen--explorer-ready {
+  pointer-events: none;
+}
+
+.screen--explorer.screen--explorer-enter {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .splash-logo {
+    width: min(360px, 82vw);
+  }
+
+  .screen--hub {
+    padding: 20px 14px;
+  }
+
+  .screen--explorer {
+    padding: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .screen {
+    transition: none;
+  }
+}
