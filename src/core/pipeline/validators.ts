@@ -85,6 +85,7 @@ export function toDrawingImageSrc(imageFile: string): string {
  * - 파일명만 들어와도 정규화
  * - `/drawings/...`, `drawings/...`, `./drawings/...` 형태도 동일 포맷으로 정리
  * - 외부 URL(http/https/data/blob)은 그대로 반환
+ * - 유니코드 정규화는 NFC 기준으로 통일한다.
  */
 export function normalizeDrawingImageRef(raw: string | null | undefined): string | null {
   if (!raw) {
@@ -115,9 +116,9 @@ export function normalizeDrawingImageRef(raw: string | null | undefined): string
   // 이미 인코딩된 값/미인코딩 값을 동일 규칙으로 통일.
   try {
     const decoded = decodeURIComponent(fileName);
-    return toDrawingImageSrc(decoded.normalize("NFD"));
+    return toDrawingImageSrc(decoded.normalize("NFC"));
   } catch {
-    return toDrawingImageSrc(fileName.normalize("NFD"));
+    return toDrawingImageSrc(fileName.normalize("NFC"));
   }
 }
 
@@ -129,8 +130,8 @@ export const nomarlizerDrawingImagRef = normalizeDrawingImageRef;
 
 /**
  * 이미지 경로 후보 목록을 생성한다.
- * - 1순위: NFD
- * - 2순위: NFC
+ * - 1순위: NFC
+ * - 2순위: NFD
  * - 3순위: 원본
  * 유니코드 정규화 차이로 인한 파일 매칭 실패를 완화한다.
  */
@@ -153,8 +154,8 @@ export function getDrawingImageSrcCandidates(raw: string | null | undefined): st
   }
 
   const candidates = [
-    toDrawingImageSrc(decodedFile.normalize("NFD")),
     toDrawingImageSrc(decodedFile.normalize("NFC")),
+    toDrawingImageSrc(decodedFile.normalize("NFD")),
     toDrawingImageSrc(decodedFile),
   ];
 
