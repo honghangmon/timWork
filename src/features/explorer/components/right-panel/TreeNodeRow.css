@@ -1,0 +1,107 @@
+.tree-node-row {
+  min-height: 36px;
+  border-radius: 9px;
+}
+
+.tree-node-row--label {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 6px;
+  color: #1e293b;
+}
+
+.tree-node-row__label-text {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.tree-node-row__compare-button {
+  height: 24px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  background: rgba(255, 190, 2, 0.28);
+  color: #111827;
+  padding: 4px 8px;
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 140ms ease, border-color 140ms ease;
+}
+
+.tree-node-row__compare-button:hover {
+  border-color: #d1d5db;
+  background: rgba(255, 190, 2, 0.5);
+}
+
+.tree-node-row--image {
+  display: grid;
+  grid-template-columns: 16px minmax(0, 1fr);
+  align-items: center;
+  gap: 6px;
+}
+
+.tree-node-row--image.is-view {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.tree-node-row--drawing-base {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tree-node-row--drawing-base .tree-node-row__image-button {
+  width: fit-content;
+  max-width: 100%;
+  text-align: center;
+  padding-inline: 14px;
+}
+
+.tree-node-row__checkbox-wrap {
+  width: 16px;
+  height: 16px;
+  display: inline-grid;
+  place-items: center;
+}
+
+.tree-node-row__checkbox-wrap input {
+  margin: 0;
+}
+
+.tree-node-row__checkbox-placeholder {
+  width: 16px;
+  height: 16px;
+}
+
+.tree-node-row__image-button {
+  width: 100%;
+  text-align: left;
+  min-height: 32px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  background: #f3f4f6;
+  color: #0f172a;
+  font-size: 12px;
+  padding: 6px 8px;
+  cursor: pointer;
+  transition: border-color 140ms ease, background 140ms ease;
+}
+
+.tree-node-row__image-button:hover:not(:disabled) {
+  border-color: #ffbe02;
+}
+
+.tree-node-row__image-button.is-active {
+  border-color: #e6aa00;
+  background: rgba(255, 190, 2, 0.3);
+  color: #0f172a;
+  font-weight: 700;
+}
+
+.tree-node-row__image-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}

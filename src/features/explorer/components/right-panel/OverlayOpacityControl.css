@@ -1,0 +1,32 @@
+.overlay-opacity-control {
+  display: grid;
+  grid-template-rows: auto auto;
+  gap: 8px;
+  height: 74px;
+  padding: 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  background: #f3f4f6;
+}
+
+.overlay-opacity-control__label-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #0f172a;
+  font-size: 12px;
+}
+
+.overlay-opacity-control input[type="range"] {
+  width: 100%;
+  accent-color: #111827;
+}
+
+.overlay-opacity-control.is-inactive {
+  background: #e5e7eb;
+  border-color: #cbd5e1;
+}
+
+.overlay-opacity-control.is-inactive .overlay-opacity-control__label-row {
+  color: #64748b;
+}

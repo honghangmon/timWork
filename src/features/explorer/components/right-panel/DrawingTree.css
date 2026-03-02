@@ -1,0 +1,6 @@
+.drawing-tree {
+  display: grid;
+  gap: 4px;
+  align-content: start;
+  padding-bottom: 2px;
+}

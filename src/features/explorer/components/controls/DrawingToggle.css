@@ -1,0 +1,72 @@
+.drawing-toggle {
+  position: relative;
+}
+
+.drawing-toggle__trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 190px;
+  height: 42px;
+  padding: 0 12px;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: 10px;
+  background: rgba(248, 250, 252, 0.96);
+  color: #141418;
+  font-size: 20px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.drawing-toggle__caret {
+  display: inline-block;
+  font-size: 14px;
+  transition: transform 160ms ease;
+}
+
+.drawing-toggle__caret.is-open {
+  transform: rotate(180deg);
+}
+
+.drawing-toggle__list {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  min-width: 240px;
+  margin: 0;
+  padding: 8px;
+  list-style: none;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  background: rgba(10, 16, 28, 0.96);
+  color: #f8fafc;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.12);
+  z-index: 20;
+}
+
+.drawing-toggle__item {
+  width: 100%;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: #f8fafc;
+  text-align: left;
+  padding: 8px 10px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.drawing-toggle__item.is-active {
+  background: rgba(255, 190, 2, 0.3);
+  color: #fff8d6;
+}
+
+.drawing-toggle__item:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.drawing-toggle__empty {
+  padding: 8px 10px;
+  color: #cad4e2;
+  font-size: 13px;
+}
