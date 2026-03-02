@@ -1,0 +1,51 @@
+.project-card {
+  min-height: 168px;
+  border-radius: 16px;
+  border: 1px solid transparent;
+  padding: 18px;
+}
+
+.project-card--active {
+  border-color: rgba(255, 190, 2, 0.96);
+  background: var(--color-primary);
+  color: var(--color-black);
+  text-align: left;
+  cursor: pointer;
+  transition: transform 160ms ease, filter 160ms ease;
+}
+
+.project-card--active:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.03);
+}
+
+.project-chip {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+  padding: 0 10px;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.12);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.project-card--active h2 {
+  margin: 16px 0 8px;
+  font-size: 24px;
+  line-height: 1.2;
+}
+
+.project-card--active p {
+  margin: 0;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.project-card--disabled {
+  background: var(--color-gray-card);
+  border-color: var(--color-gray-border);
+  color: rgba(255, 255, 255, 0.86);
+  display: grid;
+  place-items: center;
+}

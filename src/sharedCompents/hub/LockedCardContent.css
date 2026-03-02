@@ -1,0 +1,29 @@
+.locked-content {
+  display: grid;
+  place-items: center;
+  gap: 10px;
+  text-align: center;
+}
+
+.lock-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  background: rgba(255, 255, 255, 0.26);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.lock-icon svg {
+  width: 24px;
+  height: 24px;
+  fill: rgba(255, 255, 255, 0.9);
+}
+
+.locked-content p {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
