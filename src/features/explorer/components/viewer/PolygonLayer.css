@@ -1,0 +1,42 @@
+.polygon-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  pointer-events: none;
+}
+
+.polygon-layer__svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.polygon-layer__target {
+  fill: rgba(37, 99, 235, 0.82);
+  stroke: rgba(29, 78, 216, 1);
+  stroke-width: 2;
+  cursor: pointer;
+  pointer-events: auto;
+  transition: fill 0.14s ease;
+}
+
+.polygon-layer__target:hover,
+.polygon-layer__target:focus-visible {
+  fill: rgba(59, 130, 246, 0.9);
+  outline: none;
+}
+
+.polygon-layer__hover-label {
+  position: absolute;
+  z-index: 5;
+  transform: translate(-50%, -120%);
+  padding: 6px 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(29, 78, 216, 0.95);
+  background: rgba(15, 23, 42, 0.9);
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+  pointer-events: none;
+}

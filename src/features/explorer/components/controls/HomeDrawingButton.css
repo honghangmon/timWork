@@ -1,0 +1,26 @@
+.home-drawing-button {
+  width: 42px;
+  height: 42px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 10px;
+  display: inline-grid;
+  place-items: center;
+  background: rgba(248, 250, 252, 0.96);
+  cursor: pointer;
+}
+
+.home-drawing-button svg {
+  width: 22px;
+  height: 22px;
+  fill: #111827;
+}
+
+.home-drawing-button:hover:not(:disabled) {
+  background: #ffbe02;
+  border-color: #d99700;
+}
+
+.home-drawing-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

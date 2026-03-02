@@ -1,0 +1,21 @@
+.overlay-layer-stack {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.overlay-layer-stack__world {
+  position: absolute;
+  transform-origin: top left;
+}
+
+.overlay-layer-stack__layer-image {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: block;
+  object-fit: fill;
+  transform-origin: 0 0;
+  will-change: transform, opacity;
+}
